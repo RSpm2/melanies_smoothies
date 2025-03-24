@@ -31,7 +31,7 @@ st.write('The name on your Smoothie will be:', name_on_order)
 # changes made after setting up get hub
 #session = get_active_session()
 cnx = st.connection("snowflake")
-session = cnx.sessional()
+session = cnx.session()
 
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 st.dataframe(data=my_dataframe, use_container_width=True)
